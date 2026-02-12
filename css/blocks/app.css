@@ -1,0 +1,233 @@
+.app {
+    margin: 120px 0;
+    position: relative;
+    overflow-y: hidden;
+    background-image: url('/img/hero/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+     -ms-overflow-style: none;
+}
+.app::-webkit-scrollbar {
+    display: none;
+}
+
+.app::after {
+    content: "";
+    position: absolute;
+    right: 0; top: 70px;
+    width: 49.271vw;
+    height: 520px;
+    border-radius: 100%;
+    background: var(--color-blue);
+    filter: blur(140px);
+    opacity: 6%;
+}
+
+.app__content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 54px 0;
+}
+
+.app__left {
+    max-width: 780px;
+}
+
+.app__title {
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 73px;
+    color: var(--color-white);
+}
+
+.app-left-info__text {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.app-left__buttons {
+    display: flex;
+    margin-top: 80px;
+    gap: 30px;
+}
+
+.btn-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.app-left__buttons button {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--color-white);
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    transition: all .5s ease;
+}
+
+.app-left__buttons button img {
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
+.app-left__buttons button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    padding: 1px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.4) 48%, 
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
+    transition: all .5s ease;
+    opacity: 1;
+}
+.btn-content::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.app-left__app-store .btn-content::before {
+    background-image: url('/img/app/app-store-black.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.app-left__play-store .btn-content::before {
+    background-image: url('/img/app/play-store-black.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.app-left__qr-code .btn-content::before {
+    background-image: url('/img/app/qr-code-black.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.app-left__buttons button:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+.app-left__buttons button:hover::before {
+    opacity: 0;
+}
+.app-left__buttons button:hover .btn-content::before {
+    opacity: 1;
+}
+.app-left__buttons button:hover img {
+    opacity: 0;
+}
+
+.app__right {
+    width: 58.854vw;
+    height: 56vh;
+}
+
+.app-right__photo {
+    max-width: 58.854vw;
+    position: absolute;
+    right: -345px;
+}
+
+@media (max-width: 800px) {
+    .app {
+        margin: 0;
+    }
+    .app::after {
+        display: none;
+    }
+
+    .app__content {
+        margin: 60px 0;
+        flex-direction: column;
+        gap: 60px;
+    }
+    .app__content::after {
+        content: "";
+        position: absolute;
+        left: -16px; top: 203px;
+        width: 375px;
+        height: 542px;
+        border-radius: 100%;
+        background: var(--color-blue);
+        filter: blur(140px);
+        opacity: 6%;
+    }
+
+    .app__title {
+        font-size: 42px;
+        line-height: 53px;
+        text-align: center;
+    }
+
+    .app-left-info__text {
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .app-left__buttons {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .app-left__qr-code {
+        display: none;
+    }
+
+    .app-left__buttons button {
+        padding: 12px 112px;
+        background: var(--color-white);
+        color: var(--color-black);
+    }
+    .app-left__buttons button::before {
+        opacity: 0;
+    }
+    .app-left__buttons button .btn-content::before {
+        opacity: 1;
+    }
+    .app-left__buttons button img {
+        opacity: 0;
+    }
+
+    .app-right__photo {
+        position: relative;
+        right: 0;
+        min-width: 348px;
+        height: 169px;
+    }
+    .app__right {
+        width: 348px;
+        height: 169px;
+    }
+}
