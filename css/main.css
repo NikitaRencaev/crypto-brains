@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-@import "./css/reset.css";
-@import "./css/blocks/header.css";
-@import "./css/blocks/hero.css";
-@import "./css/blocks/market-trends.css";
-@import "./css/blocks/simple-step.css";
-@import "./css/blocks/about.css";
-@import "./css/blocks/comments.css";
-@import "./css/blocks/app.css";
-@import "./css/blocks/questions.css";
-@import "./css/blocks/footer.css";
+@import "css/reset.css";
+@import "css/blocks/header.css";
+@import "css/blocks/hero.css";
+@import "css/blocks/market-trends.css";
+@import "css/blocks/simple-step.css";
+@import "css/blocks/about.css";
+@import "css/blocks/comments.css";
+@import "css/blocks/app.css";
+@import "css/blocks/questions.css";
+@import "css/blocks/footer.css";
 
 /* Base styles */
 :root {
